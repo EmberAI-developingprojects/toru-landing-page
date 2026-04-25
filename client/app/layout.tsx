@@ -34,7 +34,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${hostGrotesk.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${hostGrotesk.variable} ${geistMono.variable} relative h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-canvas text-text">
         <ThemeProvider>

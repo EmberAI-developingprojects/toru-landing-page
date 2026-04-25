@@ -40,19 +40,17 @@ export function ScaleInImage({ children, className }: ScaleInProps) {
   );
 
   return (
-    <div className="relative">
-      <motion.div
-        ref={ref}
-        style={{
-          scale,
-          borderRadius: radius,
-          opacity,
-          transformOrigin: "center",
-        }}
-        className={cn("overflow-hidden will-change-transform", className)}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      ref={ref}
+      style={{
+        scale,
+        borderRadius: radius,
+        opacity,
+        transformOrigin: "center",
+      }}
+      className={cn("overflow-hidden will-change-transform", className)}
+    >
+      {children}
+    </motion.div>
   );
 }

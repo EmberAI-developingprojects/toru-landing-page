@@ -26,9 +26,17 @@ const subjects: Subject[] = [
   { id: "e", x: 79, y: 36, w: 12, h: 30, color: "violet", label: "Queue: 6", delay: 1.45 },
 ];
 
-export function HeroIllustration() {
+type HeroIllustrationProps = {
+  bleed?: boolean;
+};
+
+export function HeroIllustration({ bleed = false }: HeroIllustrationProps = {}) {
+  const wrapperClass = bleed
+    ? "absolute inset-0 overflow-hidden bg-[#0b0b10]"
+    : "relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-[#1a1a22] bg-[#0b0b10] shadow-(--shadow-float) dark:border-[#23232e] dark:bg-[#13131a]";
+
   return (
-    <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-[#1a1a22] bg-[#0b0b10] shadow-(--shadow-float) dark:border-[#23232e] dark:bg-[#13131a]">
+    <div className={wrapperClass}>
       <BackdropGrid />
       <SceneSilhouettes />
       <FlowLines />
@@ -37,7 +45,7 @@ export function HeroIllustration() {
         <Detection key={s.id} subject={s} />
       ))}
 
-      <CornerChrome />
+      <CornerChrome bleed={bleed} />
     </div>
   );
 }
@@ -214,20 +222,41 @@ function FlowLines() {
   );
 }
 
-function CornerChrome() {
+function CornerChrome({ bleed = false }: { bleed?: boolean }) {
+  const edge = bleed
+    ? {
+        tl: "top-5 left-6 md:top-6 md:left-10",
+        tr: "top-5 right-6 md:top-6 md:right-10",
+        bl: "bottom-5 left-6 md:bottom-6 md:left-10",
+        br: "bottom-5 right-6 md:bottom-6 md:right-10",
+      }
+    : {
+        tl: "top-3 left-3",
+        tr: "top-3 right-3",
+        bl: "bottom-3 left-3",
+        br: "bottom-3 right-3",
+      };
   return (
     <>
-      <span className="absolute left-3 top-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+      <span
+        className={`absolute ${edge.tl} z-10 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60`}
+      >
         <span className="size-1.5 animate-pulse rounded-full bg-pulse" />
         Live · feed-04
       </span>
-      <span className="absolute right-3 top-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+      <span
+        className={`absolute ${edge.tr} z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60`}
+      >
         29.97 fps
       </span>
-      <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+      <span
+        className={`absolute ${edge.bl} z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60`}
+      >
         Detections: 5
       </span>
-      <span className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+      <span
+        className={`absolute ${edge.br} z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60`}
+      >
         ▶ rec
       </span>
     </>
