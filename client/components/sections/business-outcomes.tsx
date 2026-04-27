@@ -30,12 +30,11 @@ export function BusinessOutcomes() {
         <SectionEyebrow>The Toru advantage</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Built to move the metrics that matter.
+            Numbers that move the business.
           </RevealText>
         </SectionTitle>
         <SectionLead>
-          Every signal Toru extracts is engineered to drive an operational
-          decision — not just to populate a chart.
+          Higher conversion. Shorter queues. Smarter staffing. Toru turns video into the metrics your team can act on right now.
         </SectionLead>
       </div>
 

@@ -41,7 +41,7 @@ export function AiModels() {
         <SectionEyebrow>Our models</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Custom-trained for real-world precision.
+            Sees everything. Misses nothing.
           </RevealText>
         </SectionTitle>
       </div>

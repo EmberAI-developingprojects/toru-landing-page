@@ -15,12 +15,11 @@ export function DashboardPreview() {
         <SectionEyebrow>The platform</SectionEyebrow>
         <SectionTitle className="mx-auto text-center">
           <RevealText as="span" split="word">
-            Everything your operators need. Nothing they don&apos;t.
+            One dashboard. Every metric.
           </RevealText>
         </SectionTitle>
         <SectionLead className="mx-auto text-center">
-          Real-time tiles, historical trends, custom alerts, multi-location
-          roll-ups. Built for operators, not data scientists.
+          Live tiles. Smart alerts. Trends across every location. Everything your team needs to run a smarter operation.
         </SectionLead>
       </div>
 

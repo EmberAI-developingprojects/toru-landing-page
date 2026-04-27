@@ -88,13 +88,11 @@ export function WhatToruSees() {
         <SectionEyebrow>Capabilities</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Everything your cameras already see — unlocked.
+            Make every camera count.
           </RevealText>
         </SectionTitle>
         <SectionLead>
-          Custom-trained computer vision for the metrics operators actually use.
-          No tagging, no manual setup — point Toru at a camera and start
-          measuring within minutes.
+          Live metrics from your existing IP cameras. Setup in minutes. Insight in real time.
         </SectionLead>
       </div>
 
