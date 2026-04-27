@@ -69,13 +69,13 @@ export function Nav() {
                 href={l.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative text-sm transition-colors",
+                  "relative text-sm font-medium transition-colors",
                   overDarkHero
                     ? active
-                      ? "font-medium text-pulse"
-                      : "text-white/80 hover:text-white"
+                      ? "font-semibold text-pulse"
+                      : "text-white/90 hover:text-white"
                     : active
-                      ? "font-medium text-accent"
+                      ? "font-semibold text-accent"
                       : "text-text-2 hover:text-accent",
                   active &&
                     "after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-px after:rounded-full after:bg-current",
