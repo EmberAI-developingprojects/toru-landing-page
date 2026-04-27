@@ -1,4 +1,14 @@
-import { Users, Timer, LayoutDashboard, Route } from "lucide-react";
+import {
+  Users,
+  Clock,
+  CalendarClock,
+  Gauge,
+  Footprints,
+  LayoutGrid,
+  ShoppingCart,
+  ShieldAlert,
+  type LucideIcon,
+} from "lucide-react";
 import {
   Section,
   SectionEyebrow,
@@ -11,95 +21,133 @@ import {
 } from "@/components/motion/reveal-on-scroll";
 import { RevealText } from "@/components/motion/reveal-text";
 
-const tiles = [
+type Capability = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+const operational: Capability[] = [
   {
     icon: Users,
-    title: "People counting",
+    title: "People Counting & Footfall",
     description:
-      "Live counts of who enters, exits, and moves between zones — broken down by direction, time, and threshold.",
-    metric: "1,284",
-    unit: "people today",
+      "Track visitor volume, entry/exit flow, and hourly patterns across all locations.",
   },
   {
-    icon: Timer,
-    title: "Dwell time",
+    icon: Clock,
+    title: "Queue & Wait Time",
     description:
-      "Measure how long anyone lingers in any area — aisles, displays, queues, meeting rooms — without manual tagging.",
-    metric: "4m 32s",
-    unit: "avg dwell",
+      "Detect queue length in real time and trigger staff alerts before service degrades.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Occupancy",
+    icon: CalendarClock,
+    title: "Staffing Optimization",
     description:
-      "Real-time headcount per space, with thresholds, alerts, and historical patterns you can act on tomorrow.",
-    metric: "47 / 60",
-    unit: "current load",
+      "Match labor allocation to live foot traffic data. Cut idle time. Reduce overstaffing costs.",
   },
   {
-    icon: Route,
-    title: "Flow & paths",
+    icon: Gauge,
+    title: "Speed of Service",
     description:
-      "Aggregate movement across zones to reveal the routes people take, where they stall, and where they never go.",
-    metric: "12",
-    unit: "zones tracked",
+      "Measure transaction times and service throughput per zone, per hour.",
+  },
+];
+
+const customer: Capability[] = [
+  {
+    icon: Footprints,
+    title: "Dwell Time & Journey",
+    description:
+      "Understand where visitors linger, what they skip, and how layout drives behavior.",
+  },
+  {
+    icon: LayoutGrid,
+    title: "Space Utilization",
+    description:
+      "Identify underused zones and optimize floor plans with heat map overlays.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Sales Conversion (POS)",
+    description:
+      "Correlate footfall with POS data to compute true conversion rates per zone.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Anomaly & Security Alerts",
+    description:
+      "Real-time alerts for unauthorized access, crowd density spikes, and safety incidents.",
   },
 ];
 
 export function WhatToruSees() {
   return (
-    <Section>
+    <Section className="bg-canvas">
       <div className="flex flex-col gap-6">
-        <SectionEyebrow>What Toru sees</SectionEyebrow>
+        <SectionEyebrow>Capabilities</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Every signal that matters, live.
+            Everything your cameras already see — unlocked.
           </RevealText>
         </SectionTitle>
         <SectionLead>
-          Built on custom-trained computer vision models. No tagging, no manual
-          setup — point Toru at a camera and start measuring within minutes.
+          Custom-trained computer vision for the metrics operators actually use.
+          No tagging, no manual setup — point Toru at a camera and start
+          measuring within minutes.
         </SectionLead>
       </div>
 
+      <CapabilityRow
+        eyebrow="Operational intelligence"
+        items={operational}
+      />
+      <CapabilityRow
+        eyebrow="Customer & strategic"
+        items={customer}
+        className="mt-12"
+      />
+    </Section>
+  );
+}
+
+function CapabilityRow({
+  eyebrow,
+  items,
+  className,
+}: {
+  eyebrow: string;
+  items: Capability[];
+  className?: string;
+}) {
+  return (
+    <div className={className ?? "mt-14"}>
+      <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+        {eyebrow}
+      </p>
       <StaggerGroup
-        className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-        stagger={0.08}
+        className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        stagger={0.07}
       >
-        {tiles.map(({ icon: Icon, title, description, metric, unit }) => (
+        {items.map(({ icon: Icon, title, description }) => (
           <StaggerItem
             key={title}
-            className="group relative flex h-full flex-col gap-8 overflow-hidden rounded-2xl border border-border bg-canvas p-6 shadow-(--shadow-card) transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-border-strong"
+            className="group relative flex h-full flex-col gap-5 rounded-xl border border-border bg-canvas p-6 shadow-[0_1px_4px_rgba(11,11,16,0.06)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(11,11,16,0.18)]"
           >
-            <div className="flex items-start justify-between">
-              <span className="grid size-11 place-items-center rounded-xl bg-surface text-accent transition-colors group-hover:bg-accent-soft">
-                <Icon size={20} />
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                live
-              </span>
-            </div>
-
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold tracking-tight text-text">
+            <span className="grid size-11 place-items-center rounded-lg bg-accent-soft text-accent">
+              <Icon size={20} />
+            </span>
+            <div>
+              <h3 className="text-base font-semibold tracking-tight text-text">
                 {title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-text-2">
+              <p className="mt-2 text-[14px] leading-[1.6] text-text-2">
                 {description}
               </p>
-            </div>
-
-            <div className="flex items-baseline gap-3 border-t border-border pt-4">
-              <span className="font-mono text-2xl tabular-nums tracking-tight text-text">
-                {metric}
-              </span>
-              <span className="text-xs uppercase tracking-[0.18em] text-muted">
-                {unit}
-              </span>
             </div>
           </StaggerItem>
         ))}
       </StaggerGroup>
-    </Section>
+    </div>
   );
 }

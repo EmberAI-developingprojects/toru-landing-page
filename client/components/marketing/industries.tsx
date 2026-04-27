@@ -14,45 +14,45 @@ import { RevealText } from "@/components/motion/reveal-text";
 
 const industries = [
   {
-    label: "Retail & Cafés",
-    outcome: "Cut queue waits 30%",
-    detail: "Queue length, conversion, dwell, peak hours.",
+    label: "Retail",
+    detail:
+      "Footfall, conversion, queue, and dwell analytics for every store format.",
   },
   {
-    label: "Offices",
-    outcome: "Reclaim 20% of desks",
-    detail: "Desk utilization, room occupancy, attendance.",
+    label: "Warehouse",
+    detail:
+      "Zone compliance, throughput, and safety monitoring at scale.",
   },
   {
-    label: "Buildings",
-    outcome: "Live people-flow",
-    detail: "Entry / exit, crowd density, safety alerts.",
+    label: "Healthcare",
+    detail:
+      "Occupancy management, patient flow, and access control.",
   },
   {
-    label: "Manufacturing",
-    outcome: "Zone & PPE compliance",
-    detail: "Zone violations, PPE detection, equipment use.",
+    label: "Government",
+    detail:
+      "Crowd analytics, perimeter security, and compliance reporting.",
   },
   {
-    label: "Events",
-    outcome: "Heatmaps & flow",
-    detail: "Flow analysis, heatmaps, peak detection.",
+    label: "Education",
+    detail:
+      "Campus occupancy, access events, and safety alerts.",
   },
   {
-    label: "Hospitality",
-    outcome: "Smarter staffing",
-    detail: "Arrival patterns, lobby dwell, service times.",
+    label: "OOH Advertising",
+    detail:
+      "Audience measurement and campaign performance from existing DOOH camera infrastructure.",
   },
 ];
 
 export function Industries() {
   return (
-    <Section>
+    <Section className="bg-dot-grid">
       <div className="flex flex-col gap-6">
-        <SectionEyebrow>Built for every space</SectionEyebrow>
+        <SectionEyebrow>Industries</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            One platform. Six industries. Endless rooms.
+            Built for every space.
           </RevealText>
         </SectionTitle>
         <SectionLead>
@@ -62,26 +62,26 @@ export function Industries() {
       </div>
 
       <StaggerGroup
-        className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         stagger={0.06}
       >
         {industries.map((i) => (
           <StaggerItem
             key={i.label}
-            className="group relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-2xl border border-border bg-canvas p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-(--shadow-card)"
+            className="group relative flex h-full flex-col justify-between gap-6 rounded-xl border border-border bg-canvas p-6 shadow-[0_1px_4px_rgba(11,11,16,0.06)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(11,11,16,0.18)]"
           >
             <Link href="/solutions" className="absolute inset-0" aria-label={i.label} />
             <div>
-              <h3 className="text-lg font-semibold tracking-tight text-text">
+              <h3 className="text-xl font-semibold tracking-tight text-text">
                 {i.label}
               </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-text-2">
+              <p className="mt-3 text-[15px] leading-[1.6] text-text-2">
                 {i.detail}
               </p>
             </div>
             <div className="flex items-center justify-between border-t border-border pt-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
-                {i.outcome}
+                Learn more
               </span>
               <ArrowUpRight
                 size={16}

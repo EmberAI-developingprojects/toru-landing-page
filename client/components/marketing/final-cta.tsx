@@ -1,47 +1,45 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { RevealText } from "@/components/motion/reveal-text";
 import { RevealOnScroll } from "@/components/motion/reveal-on-scroll";
 
 export function FinalCTA() {
   return (
     <section className="relative px-6 py-24 md:px-10 md:py-32">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-border bg-[#0b0b10] px-8 py-16 text-white md:px-16 md:py-24 dark:border-[#23232e] dark:bg-[#13131a]">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-[#003a2c] bg-gradient-to-br from-[#00382a] to-[#001a13] px-8 py-16 text-white md:px-16 md:py-24">
         <Glow />
-        <div className="relative flex flex-col items-start gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-xl">
-            <RevealOnScroll>
-              <span className="font-mono text-xs uppercase tracking-[0.22em] text-teal">
-                Ready when you are
-              </span>
-            </RevealOnScroll>
-            <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
-              <RevealText as="span" split="word">
-                Ready to see what your cameras already know?
-              </RevealText>
-            </h2>
-            <RevealOnScroll delay={0.3}>
-              <p className="mt-5 text-pretty text-base leading-relaxed text-white/70 md:text-lg">
-                Pilot in days, not quarters. Bring one feed — we&apos;ll show
-                you what Toru extracts, live, in your space.
-              </p>
-            </RevealOnScroll>
-          </div>
+        <div className="relative flex flex-col items-start gap-10 text-left md:items-center md:text-center">
+          <RevealOnScroll>
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-pulse">
+              Ready when you are
+            </span>
+          </RevealOnScroll>
+          <h2 className="max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            <RevealText as="span" split="word">
+              Your cameras are already watching. Make them understand.
+            </RevealText>
+          </h2>
+          <RevealOnScroll delay={0.2}>
+            <p className="max-w-2xl text-pretty text-lg leading-[1.7] text-white/80">
+              Connect one feed. We&apos;ll show you what it sees.
+            </p>
+          </RevealOnScroll>
           <RevealOnScroll
-            delay={0.45}
-            className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end"
+            delay={0.3}
+            className="flex flex-col items-start gap-4 md:items-center"
           >
-            <Button href="/contact" size="lg">
-              Book a demo <ArrowRight size={16} />
-            </Button>
-            <Button
-              href="/technology"
-              variant="ghost"
-              size="lg"
-              className="text-white hover:bg-white/10"
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-medium tracking-tight text-[#00382a] transition-colors hover:bg-pulse hover:text-[#001a13]"
             >
-              See the technology
-            </Button>
+              Book a free demo <ArrowRight size={16} />
+            </Link>
+            <a
+              href="mailto:hello@toru.ai"
+              className="font-mono text-xs uppercase tracking-[0.22em] text-white/70 underline-offset-4 transition-colors hover:text-pulse hover:underline"
+            >
+              Or email us at hello@toru.ai
+            </a>
           </RevealOnScroll>
         </div>
       </div>
@@ -56,7 +54,7 @@ function Glow() {
       className="pointer-events-none absolute inset-0"
       style={{
         background:
-          "radial-gradient(80% 60% at 0% 0%, rgba(0,229,184,0.22) 0%, rgba(11,11,16,0) 60%), radial-gradient(80% 60% at 100% 100%, rgba(107,87,245,0.2) 0%, rgba(11,11,16,0) 60%)",
+          "radial-gradient(80% 60% at 0% 0%, rgba(0,229,184,0.22) 0%, rgba(0,26,19,0) 60%), radial-gradient(80% 60% at 100% 100%, rgba(107,87,245,0.18) 0%, rgba(0,26,19,0) 60%)",
       }}
     />
   );

@@ -2,120 +2,127 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RevealText } from "@/components/motion/reveal-text";
 import { RevealOnScroll } from "@/components/motion/reveal-on-scroll";
-import { HeroIllustration } from "./hero-illustration";
+
+const industryPills = [
+  "Retail",
+  "Warehouse",
+  "Healthcare",
+  "Government",
+  "Education",
+  "OOH Advertising",
+];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-[#0b0b10] text-white">
-      <HeroIllustration bleed />
-      <Vignette />
+    <>
+      <section className="relative isolate flex min-h-[88vh] w-full items-center justify-center overflow-hidden border-b border-border text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-br from-[#00382a] to-[#001a13]"
+        />
+        <video
+          aria-hidden
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/hero-bg.mp4"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[#001a13]/70"
+        />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-6 pb-24 pt-28 md:min-h-190 md:px-10 md:pb-32 md:pt-36">
-        <div className="max-w-2xl">
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-28 text-center md:px-10 md:py-36">
           <RevealOnScroll>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-pulse/40 bg-pulse/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.22em] text-pulse backdrop-blur">
               <span className="size-1.5 rounded-full bg-pulse shadow-[0_0_10px_var(--color-pulse)]" />
-              Computer vision · No new hardware
+              Real-time video intelligence
             </span>
           </RevealOnScroll>
 
-          <h1 className="mt-7 text-balance text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+          <h1 className="mt-8 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">
             <RevealText as="span" split="word">
-              Any camera.
-            </RevealText>{" "}
-            <RevealText
-              as="span"
-              split="word"
-              delay={0.15}
-              className="text-pulse"
-            >
-              Real-time intelligence.
+              Turn any camera into an AI analyst.
             </RevealText>
           </h1>
 
-          <RevealOnScroll delay={0.3} className="mt-7 max-w-xl">
-            <p className="text-pretty text-base leading-relaxed text-white/75 md:text-lg">
-              Toru extracts live, actionable data from the video feeds you
-              already have — dwell time, occupancy, customer count, queue
-              length, and more. No new hardware. No rip-and-replace. Just
-              cameras, internet, and insight.
+          <RevealOnScroll delay={0.2} className="mt-7 max-w-2xl">
+            <p className="text-pretty text-lg leading-[1.7] text-white/80 md:text-xl">
+              Toru connects to your existing IP cameras and delivers live
+              operational intelligence — people counting, dwell time, queue
+              management, and more. No new hardware. No rip-and-replace.
             </p>
           </RevealOnScroll>
 
           <RevealOnScroll
-            delay={0.45}
-            className="mt-9 flex flex-wrap items-center gap-3"
+            delay={0.3}
+            className="mt-10 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3"
           >
-            <Button href="/contact" size="lg">
-              Book a demo <ArrowRight size={16} />
-            </Button>
-            <Button
-              href="/technology"
-              variant="outline"
-              size="lg"
-              className="border-white/25 text-white hover:border-pulse hover:text-pulse"
-            >
-              See the technology
-            </Button>
+            <StatChip value="<100ms" label="inference latency" />
+            <StatChip value=">95%" label="detection accuracy" />
+            <StatChip value="Any IP camera" label="360p and up" />
           </RevealOnScroll>
 
           <RevealOnScroll
-            delay={0.6}
-            className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-white/10 pt-6"
+            delay={0.4}
+            className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
-            <Metric value="<100ms" label="Inference" />
-            <Metric value=">95%" label="Detection" />
-            <Metric value="Any" label="IP camera" />
+            <Button href="/contact" size="lg" className="px-8">
+              Book a demo <ArrowRight size={16} />
+            </Button>
+            <Button
+              href="#how-it-works"
+              variant="outline"
+              size="lg"
+              className="border-white/40 bg-transparent px-8 text-white hover:border-pulse hover:text-pulse"
+            >
+              See how it works
+            </Button>
           </RevealOnScroll>
         </div>
-      </div>
 
-      <BottomFade />
-    </section>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#001a13]"
+        />
+      </section>
+
+      <IndustryMarquee />
+    </>
   );
 }
 
-function Metric({ value, label }: { value: string; label: string }) {
+function StatChip({ value, label }: { value: string; label: string }) {
   return (
-    <div className="flex flex-col gap-1">
-      <span className="font-mono text-lg tracking-tight text-white md:text-xl">
+    <div className="flex flex-col items-center gap-1 rounded-2xl border border-pulse/40 bg-white/5 px-5 py-4 backdrop-blur-sm">
+      <span className="font-mono text-base tracking-tight text-white md:text-lg">
         {value}
       </span>
-      <span className="text-xs uppercase tracking-[0.18em] text-white/50">
+      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/60">
         {label}
       </span>
     </div>
   );
 }
 
-function Vignette() {
+function IndustryMarquee() {
+  const items = [...industryPills, ...industryPills];
   return (
-    <>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-1"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(11,11,16,0.92) 0%, rgba(11,11,16,0.78) 28%, rgba(11,11,16,0.45) 55%, rgba(11,11,16,0) 80%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-1"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 80% 30%, rgba(0,229,184,0.10) 0%, rgba(11,11,16,0) 65%), radial-gradient(50% 50% at 20% 80%, rgba(107,87,245,0.10) 0%, rgba(11,11,16,0) 65%)",
-        }}
-      />
-    </>
-  );
-}
-
-function BottomFade() {
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-x-0 bottom-0 z-2 h-24 bg-linear-to-b from-transparent to-[#0b0b10]"
-    />
+    <div className="relative overflow-hidden border-b border-border bg-canvas py-6">
+      <div className="flex w-max animate-marquee-x gap-3 whitespace-nowrap">
+        {items.map((label, i) => (
+          <span
+            key={`${label}-${i}`}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-canvas px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-text-2"
+          >
+            <span className="size-1.5 rounded-full bg-accent" />
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

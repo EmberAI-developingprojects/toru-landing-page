@@ -1,30 +1,63 @@
-import { Section } from "@/components/ui/section";
+import {
+  Section,
+  SectionEyebrow,
+  SectionTitle,
+} from "@/components/ui/section";
 import {
   StaggerGroup,
   StaggerItem,
+  RevealOnScroll,
 } from "@/components/motion/reveal-on-scroll";
+import { RevealText } from "@/components/motion/reveal-text";
 
-const placeholders = ["Aurora", "Northbound", "Veridian", "Fieldnote", "Halcyon", "Lumen"];
+const stats = [
+  { value: "360p+", label: "Works with any camera resolution" },
+  { value: "<100ms", label: "Real-time inference latency" },
+  { value: "1000+", label: "Supported camera models" },
+];
 
 export function SocialProof() {
   return (
-    <Section className="py-16 md:py-20">
-      <p className="text-center font-mono text-xs uppercase tracking-[0.22em] text-muted">
-        Deployed across pilot sites in 3 industries
-      </p>
+    <Section className="bg-canvas">
+      <div className="flex flex-col gap-6">
+        <SectionEyebrow>Trusted intelligence</SectionEyebrow>
+        <SectionTitle>
+          <RevealText as="span" split="word">
+            Deployed across industries and spaces.
+          </RevealText>
+        </SectionTitle>
+      </div>
+
       <StaggerGroup
-        className="mt-8 grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 md:grid-cols-6"
-        stagger={0.05}
+        className="mt-14 grid gap-5 sm:grid-cols-3"
+        stagger={0.08}
       >
-        {placeholders.map((name) => (
+        {stats.map((s) => (
           <StaggerItem
-            key={name}
-            className="flex h-10 items-center justify-center font-mono text-sm uppercase tracking-[0.2em] text-muted"
+            key={s.value}
+            className="flex flex-col items-start gap-3 rounded-xl border border-border bg-canvas p-7 shadow-[0_1px_4px_rgba(11,11,16,0.06)]"
           >
-            {name}
+            <span className="font-mono text-4xl font-semibold tracking-tight text-accent md:text-5xl">
+              {s.value}
+            </span>
+            <span className="text-[15px] leading-[1.6] text-text-2">
+              {s.label}
+            </span>
           </StaggerItem>
         ))}
       </StaggerGroup>
+
+      <RevealOnScroll delay={0.2} className="mt-12">
+        <figure className="mx-auto max-w-3xl rounded-2xl border border-border bg-surface p-8 md:p-10">
+          <blockquote className="text-pretty text-xl leading-[1.6] text-text md:text-2xl">
+            &ldquo;Toru gave us occupancy data we didn&apos;t know we were
+            missing. Setup was done in an afternoon.&rdquo;
+          </blockquote>
+          <figcaption className="mt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+            Operations Manager · Retail Chain
+          </figcaption>
+        </figure>
+      </RevealOnScroll>
     </Section>
   );
 }

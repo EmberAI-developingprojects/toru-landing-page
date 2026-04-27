@@ -6,15 +6,16 @@ import {
 } from "@/components/ui/section";
 import { ScaleInImage } from "@/components/motion/scale-in-image";
 import { RevealText } from "@/components/motion/reveal-text";
+import { RevealOnScroll } from "@/components/motion/reveal-on-scroll";
 
 export function DashboardPreview() {
   return (
-    <Section className="border-y border-border">
+    <Section className="border-y border-border bg-canvas">
       <div className="flex flex-col items-center gap-6 text-center">
-        <SectionEyebrow>The Toru dashboard</SectionEyebrow>
+        <SectionEyebrow>The platform</SectionEyebrow>
         <SectionTitle className="mx-auto text-center">
           <RevealText as="span" split="word">
-            Every metric that matters, in one live view.
+            Everything your operators need. Nothing they don&apos;t.
           </RevealText>
         </SectionTitle>
         <SectionLead className="mx-auto text-center">
@@ -23,13 +24,77 @@ export function DashboardPreview() {
         </SectionLead>
       </div>
 
-      <div className="mt-16">
+      <div className="relative mt-16">
         <ScaleInImage className="mx-auto w-full max-w-5xl border border-border bg-canvas shadow-(--shadow-float)">
           <DashboardChrome />
           <DashboardBody />
         </ScaleInImage>
+
+        <FloatingChip
+          className="-top-4 left-4 md:-left-8 md:top-12"
+          tone="accent"
+          delay={0.2}
+        >
+          <span className="size-1.5 rounded-full bg-accent" />
+          Live: 247 visitors
+        </FloatingChip>
+        <FloatingChip
+          className="-top-4 right-4 md:-right-10 md:top-24"
+          tone="amber"
+          delay={0.35}
+        >
+          <span className="size-1.5 rounded-full bg-[#f59e0b]" />
+          Queue: 4 min avg
+        </FloatingChip>
+        <FloatingChip
+          className="-bottom-4 left-4 md:-left-12 md:bottom-20"
+          tone="violet"
+          delay={0.5}
+        >
+          <span className="size-1.5 rounded-full bg-violet" />
+          Occupancy: 78%
+        </FloatingChip>
+        <FloatingChip
+          className="-bottom-4 right-4 md:-right-8 md:bottom-12"
+          tone="red"
+          delay={0.65}
+        >
+          <span className="size-1.5 rounded-full bg-[#ef4444]" />
+          Alert: Zone B exceeded
+        </FloatingChip>
       </div>
     </Section>
+  );
+}
+
+function FloatingChip({
+  children,
+  className,
+  tone,
+  delay,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  tone: "accent" | "amber" | "violet" | "red";
+  delay: number;
+}) {
+  const toneMap = {
+    accent: "border-accent/50 text-accent",
+    amber: "border-[#f59e0b]/50 text-[#b45309]",
+    violet: "border-violet/50 text-violet",
+    red: "border-[#ef4444]/60 text-[#b91c1c]",
+  } as const;
+  return (
+    <RevealOnScroll
+      delay={delay}
+      className={`pointer-events-none absolute z-10 hidden md:block ${className ?? ""}`}
+    >
+      <span
+        className={`inline-flex items-center gap-2 rounded-full border bg-canvas px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] shadow-[0_8px_24px_-12px_rgba(11,11,16,0.25)] ${toneMap[tone]}`}
+      >
+        {children}
+      </span>
+    </RevealOnScroll>
   );
 }
 

@@ -7,6 +7,45 @@ import {
 } from "@/components/ui/section";
 import { StickyShowcase } from "@/components/motion/sticky-showcase";
 import { RevealText } from "@/components/motion/reveal-text";
+import {
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/motion/reveal-on-scroll";
+
+const detailedSteps = [
+  {
+    title: "Connect your existing cameras",
+    body: "No new hardware. Any IP camera on your network works instantly.",
+  },
+  {
+    title: "Toru processes video on-premise",
+    body: "AI runs locally. Your footage never leaves your site.",
+  },
+  {
+    title: "Computer vision models detect objects",
+    body: "Custom-trained models identify people, vehicles, and behaviors in real time.",
+  },
+  {
+    title: "Metadata is extracted, not video",
+    body: "Only anonymized event data is sent to the cloud. Zero raw footage transmitted.",
+  },
+  {
+    title: "Live metrics appear on your dashboard",
+    body: "Counts, dwell times, heatmaps, and queue lengths update in real time.",
+  },
+  {
+    title: "Alerts fire when thresholds are crossed",
+    body: "Set custom triggers: occupancy limits, queue length, unusual activity.",
+  },
+  {
+    title: "Historical reports surface hidden patterns",
+    body: "Drill into trends by hour, day, zone, or location.",
+  },
+  {
+    title: "Integrate via API or webhook",
+    body: "Push data to your POS, CRM, workforce tool, or BI platform.",
+  },
+];
 
 export function HowItWorks() {
   const steps = [
@@ -21,7 +60,7 @@ export function HowItWorks() {
       id: "detect",
       eyebrow: "Step 02 · Detect & extract",
       title: "Custom CV models, real-time inference.",
-      body: "Toru's models run in the cloud at sub-100ms latency. People, dwell, occupancy, queues, paths — all extracted from raw pixels with no manual tagging.",
+      body: "Toru's models run on-premise at sub-100ms latency. People, dwell, occupancy, queues, paths — all extracted from raw pixels with no manual tagging.",
       visual: <DetectVisual />,
     },
     {
@@ -34,12 +73,12 @@ export function HowItWorks() {
   ];
 
   return (
-    <Section className="bg-surface">
+    <Section id="how-it-works" className="bg-canvas">
       <div className="flex flex-col gap-6">
-        <SectionEyebrow>Works with what you already have</SectionEyebrow>
+        <SectionEyebrow>How it works</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            From camera to insight in three steps.
+            From camera to insight in minutes.
           </RevealText>
         </SectionTitle>
         <SectionLead>
@@ -49,6 +88,38 @@ export function HowItWorks() {
       </div>
 
       <StickyShowcase className="mt-8" steps={steps} />
+
+      <div className="mt-20 border-t border-border pt-16">
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+          The full pipeline
+        </p>
+        <h3 className="mt-3 max-w-3xl text-balance text-2xl font-semibold leading-tight tracking-tight text-text md:text-4xl">
+          Eight steps. From camera plug-in to BI dashboard.
+        </h3>
+
+        <StaggerGroup className="mt-10 flex flex-col" stagger={0.05}>
+          {detailedSteps.map((step, i) => (
+            <StaggerItem
+              key={step.title}
+              className={`flex flex-col gap-3 border-t border-border px-6 py-6 md:flex-row md:items-center md:gap-10 md:px-8 ${
+                i % 2 === 1 ? "bg-surface" : "bg-canvas"
+              } ${i === detailedSteps.length - 1 ? "border-b border-border" : ""}`}
+            >
+              <div className="flex items-center gap-5 md:w-72 md:shrink-0">
+                <span className="font-mono text-2xl font-semibold tabular-nums tracking-tight text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h4 className="text-lg font-semibold tracking-tight text-text">
+                  {step.title}
+                </h4>
+              </div>
+              <p className="flex-1 text-[15px] leading-[1.7] text-text-2 md:text-base">
+                {step.body}
+              </p>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </div>
     </Section>
   );
 }

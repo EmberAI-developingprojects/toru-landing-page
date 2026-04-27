@@ -102,3 +102,38 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+@keyframes marquee-scroll-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee-x {
+  animation: marquee-scroll-x 32s linear infinite;
+}
+
+.bg-dot-grid {
+  background-color: #f9fafb;
+  background-image: radial-gradient(rgba(11, 11, 16, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+}
+
+[data-theme="dark"] .bg-dot-grid {
+  background-color: var(--color-surface);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+.bg-grid-lines {
+  background-color: var(--color-canvas);
+  background-image:
+    linear-gradient(to right, rgba(11, 11, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 11, 16, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+[data-theme="dark"] .bg-grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
