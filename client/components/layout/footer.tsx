@@ -21,17 +21,26 @@ const groups = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_3fr] md:px-10">
+    <footer className="relative overflow-hidden bg-[#0a0a0f] text-white">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(70% 90% at 0% 0%, rgba(0,229,184,0.10) 0%, rgba(10,10,15,0) 60%), radial-gradient(60% 80% at 100% 100%, rgba(107,87,245,0.08) 0%, rgba(10,10,15,0) 60%)",
+        }}
+      />
+
+      <div className="relative mx-auto grid w-full max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_3fr] md:px-10">
         <div className="flex flex-col gap-4">
           <Link
             href="/"
             aria-label="Toru — home"
-            className="inline-flex text-accent transition-colors hover:text-accent-hover"
+            className="inline-flex text-pulse transition-colors hover:text-white"
           >
             <Logo size="md" />
           </Link>
-          <p className="max-w-xs text-sm leading-relaxed text-muted">
+          <p className="max-w-xs text-sm leading-relaxed text-white/75">
             Real-time intelligence from the cameras you already have.
           </p>
         </div>
@@ -39,15 +48,15 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
           {groups.map((g) => (
             <div key={g.title} className="flex flex-col gap-3">
-              <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+              <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55">
                 {g.title}
               </h4>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2.5">
                 {g.links.map((l) => (
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-text-2 transition-colors hover:text-accent"
+                      className="text-sm text-white/85 transition-colors hover:text-pulse"
                     >
                       {l.label}
                     </Link>
@@ -58,12 +67,16 @@ export function Footer() {
           ))}
         </div>
       </div>
-      <div className="border-t border-border">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-muted md:flex-row md:items-center md:px-10">
+
+      <div className="relative border-t border-white/10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-white/65 md:flex-row md:items-center md:px-10">
           <span>© {new Date().getFullYear()} Toru. All rights reserved.</span>
-          <span className="font-mono uppercase tracking-[0.18em]">
-            Detect · Extract · Deliver
-          </span>
+          <a
+            href="mailto:hello@toru.ai"
+            className="font-mono uppercase tracking-[0.22em] text-white/80 transition-colors hover:text-pulse"
+          >
+            hello@toru.ai
+          </a>
         </div>
       </div>
     </footer>
