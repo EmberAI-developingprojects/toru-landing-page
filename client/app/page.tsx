@@ -13,7 +13,6 @@ export default function Page() {
       {/* <InputSourcesStrip /> */}
       <WhatToruSees />
       <BusinessOutcomes />
-      {/* <Industries /> */}
       <DashboardPreview />
       <FinalCTA />
     </>

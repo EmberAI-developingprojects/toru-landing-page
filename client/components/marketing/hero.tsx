@@ -38,9 +38,8 @@ export function Hero() {
         <RevealOnScroll delay={0.2} className="mt-7 max-w-2xl">
           <p className="text-pretty text-lg leading-[1.7] text-white/80 md:text-xl">
             Toru is a computer vision platform. We process live video from
-            cameras, drones, or any feed — and turn it into operational data in
-            real time. We&apos;re not a camera vendor; we&apos;re the AI behind
-            it.
+            cameras, drones, or any feed and turn it into operational data in
+            real time.
           </p>
         </RevealOnScroll>
 

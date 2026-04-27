@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · Toru",
   },
   description:
-    "Toru is a computer vision platform. We process live video — from cameras, drones, or any feed — and extract operational data in real time.",
+    "Toru is a computer vision platform. We process live video — from cameras, drones, or any feed, and extract operational data in real time.",
 };
 
 export default function RootLayout({

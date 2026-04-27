@@ -20,15 +20,15 @@ export function FinalCTA() {
           </h2>
           <RevealOnScroll delay={0.2}>
             <p className="max-w-2xl text-pretty text-lg leading-[1.7] text-white/80">
-              Bring one feed — camera, drone, anything. We&apos;ll show you what our AI extracts.
+              Bring one feed. Camera, drone, anything. We'll show you what our AI extracts.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.3}>
             <a
-              href="mailto:hello@toru.ai"
+              href="mailto:info@toru.mn"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-medium tracking-tight text-[#00382a] transition-colors hover:bg-pulse hover:text-[#001a13]"
             >
-              hello@toru.ai <ArrowRight size={16} />
+              info@toru.mn <ArrowRight size={16} />
             </a>
           </RevealOnScroll>
         </div>

@@ -72,10 +72,10 @@ export function Footer() {
         <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-white/65 md:flex-row md:items-center md:px-10">
           <span>© {new Date().getFullYear()} Toru. All rights reserved.</span>
           <a
-            href="mailto:hello@toru.ai"
+            href="mailto:info@toru.mn"
             className="font-mono uppercase tracking-[0.22em] text-white/80 transition-colors hover:text-pulse"
           >
-            hello@toru.ai
+            info@toru.mn
           </a>
         </div>
       </div>
