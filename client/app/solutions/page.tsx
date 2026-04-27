@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/page-hero";
 import { SolutionCategories } from "@/components/sections/solution-categories";
 import { IndustryDeepDives } from "@/components/sections/industry-deep-dives";
-import { AdvantageStrip } from "@/components/sections/advantage-strip";
 import { DarkCTA } from "@/components/sections/dark-cta";
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ export default function Page() {
       />
       <SolutionCategories />
       <IndustryDeepDives />
-      <AdvantageStrip />
       <DarkCTA
         eyebrow="No two operations look alike"
         title="Not sure which solution fits your space?"

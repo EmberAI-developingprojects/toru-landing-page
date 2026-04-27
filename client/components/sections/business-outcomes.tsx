@@ -40,21 +40,21 @@ export function BusinessOutcomes() {
       </div>
 
       <StaggerGroup
-        className="mt-14 grid gap-x-8 gap-y-2 md:grid-cols-2"
+        className="mt-14 grid gap-x-10 gap-y-2 md:grid-cols-2"
         stagger={0.06}
       >
         {outcomes.map((text, i) => (
           <StaggerItem
             key={text}
-            className="relative overflow-hidden border-b border-border py-7"
+            className="relative flex items-center gap-5 border-b border-border py-7 md:gap-7"
           >
             <span
               aria-hidden
-              className="pointer-events-none absolute -left-2 top-1 select-none font-mono text-5xl font-semibold tracking-tight text-accent opacity-20 md:text-6xl"
+              className="shrink-0 select-none font-mono text-5xl font-semibold leading-none tabular-nums text-accent/25 md:text-6xl"
             >
               {String(i + 1).padStart(2, "0")}
             </span>
-            <p className="relative pl-16 text-lg leading-[1.6] text-text md:pl-20 md:text-xl">
+            <p className="text-lg leading-[1.6] text-text md:text-xl">
               {text}
             </p>
           </StaggerItem>

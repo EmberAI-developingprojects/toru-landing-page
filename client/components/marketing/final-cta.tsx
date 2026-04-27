@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { RevealText } from "@/components/motion/reveal-text";
 import { RevealOnScroll } from "@/components/motion/reveal-on-scroll";
@@ -24,21 +23,12 @@ export function FinalCTA() {
               Connect one feed. We&apos;ll show you what it sees.
             </p>
           </RevealOnScroll>
-          <RevealOnScroll
-            delay={0.3}
-            className="flex flex-col items-start gap-4 md:items-center"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-medium tracking-tight text-[#00382a] transition-colors hover:bg-pulse hover:text-[#001a13]"
-            >
-              Book a free demo <ArrowRight size={16} />
-            </Link>
+          <RevealOnScroll delay={0.3}>
             <a
               href="mailto:hello@toru.ai"
-              className="font-mono text-xs uppercase tracking-[0.22em] text-white/70 underline-offset-4 transition-colors hover:text-pulse hover:underline"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-medium tracking-tight text-[#00382a] transition-colors hover:bg-pulse hover:text-[#001a13]"
             >
-              Or email us at hello@toru.ai
+              hello@toru.ai <ArrowRight size={16} />
             </a>
           </RevealOnScroll>
         </div>

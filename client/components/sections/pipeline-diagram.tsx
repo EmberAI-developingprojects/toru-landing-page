@@ -30,7 +30,7 @@ const steps = [
   {
     number: "04",
     name: "Deliver",
-    body: "Extracted data streams to your Toru dashboard and optionally to your existing tools via REST API or webhook.",
+    body: "Extracted data streams to your Toru dashboard and mobile app.",
   },
 ];
 

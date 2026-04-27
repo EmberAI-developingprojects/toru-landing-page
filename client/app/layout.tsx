@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Host_Grotesk, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
 
-const hostGrotesk = Host_Grotesk({
+const geistSans = Geist({
   variable: "--font-sans-brand",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -34,7 +33,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${hostGrotesk.variable} ${geistMono.variable} relative h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} relative h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-canvas text-text">
         <ThemeProvider>

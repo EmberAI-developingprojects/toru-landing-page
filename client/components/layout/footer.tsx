@@ -6,23 +6,16 @@ const groups = [
     title: "Product",
     links: [
       { href: "/technology", label: "Technology" },
-      { href: "/platform", label: "Platform" },
       { href: "/solutions", label: "Solutions" },
     ],
   },
   {
     title: "Company",
-    links: [
-      { href: "/careers", label: "Careers" },
-      { href: "/contact", label: "Contact" },
-    ],
+    links: [{ href: "/contact", label: "Contact" }],
   },
   {
     title: "Resources",
-    links: [
-      { href: "/contact", label: "Book a demo" },
-      { href: "/contact", label: "Talk to sales" },
-    ],
+    links: [{ href: "/contact", label: "Talk to sales" }],
   },
 ];
 

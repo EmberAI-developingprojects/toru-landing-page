@@ -54,20 +54,20 @@ const industries: Industry[] = [
     result:
       "Reduce compliance incidents and optimize throughput with zero extra sensors.",
   },
-  {
-    name: "Healthcare",
-    icon: HeartPulse,
-    context:
-      "Patient flow and space utilization directly impact care quality and operating costs.",
-    measures: [
-      "Patient flow & wait times",
-      "Room & bed occupancy",
-      "Access control events",
-      "Crowd density alerts",
-    ],
-    result:
-      "Cut patient wait times and optimize ward utilization in real time.",
-  },
+  // {
+  //   name: "Healthcare",
+  //   icon: HeartPulse,
+  //   context:
+  //     "Patient flow and space utilization directly impact care quality and operating costs.",
+  //   measures: [
+  //     "Patient flow & wait times",
+  //     "Room & bed occupancy",
+  //     "Access control events",
+  //     "Crowd density alerts",
+  //   ],
+  //   result:
+  //     "Cut patient wait times and optimize ward utilization in real time.",
+  // },
   {
     name: "Government",
     icon: Building2,
@@ -82,34 +82,34 @@ const industries: Industry[] = [
     result:
       "Deliver compliance-grade crowd analytics with full video anonymization.",
   },
-  {
-    name: "Education",
-    icon: GraduationCap,
-    context:
-      "Campus safety and space efficiency are constant operational priorities.",
-    measures: [
-      "Campus occupancy & access events",
-      "Library & common area usage",
-      "Safety alert zones",
-      "Attendance flow patterns",
-    ],
-    result:
-      "Improve campus safety response times with real-time zone alerts.",
-  },
-  {
-    name: "OOH Advertising",
-    icon: Megaphone,
-    context:
-      "Audience measurement is the foundation of every DOOH campaign ROI claim.",
-    measures: [
-      "Audience counts by location & time",
-      "Demographic estimates (anonymized)",
-      "Dwell time in front of display",
-      "Campaign reach vs footfall benchmarks",
-    ],
-    result:
-      "Prove campaign performance with real audience data, not estimates.",
-  },
+  // {
+  //   name: "Education",
+  //   icon: GraduationCap,
+  //   context:
+  //     "Campus safety and space efficiency are constant operational priorities.",
+  //   measures: [
+  //     "Campus occupancy & access events",
+  //     "Library & common area usage",
+  //     "Safety alert zones",
+  //     "Attendance flow patterns",
+  //   ],
+  //   result:
+  //     "Improve campus safety response times with real-time zone alerts.",
+  // },
+  // {
+  //   name: "OOH Advertising",
+  //   icon: Megaphone,
+  //   context:
+  //     "Audience measurement is the foundation of every DOOH campaign ROI claim.",
+  //   measures: [
+  //     "Audience counts by location & time",
+  //     "Demographic estimates (anonymized)",
+  //     "Dwell time in front of display",
+  //     "Campaign reach vs footfall benchmarks",
+  //   ],
+  //   result:
+  //     "Prove campaign performance with real audience data, not estimates.",
+  // },
 ];
 
 export function IndustryDeepDives() {
