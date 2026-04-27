@@ -31,7 +31,7 @@ export function Hero() {
 
         <h1 className="mt-8 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">
           <RevealText as="span" split="word">
-            AI that turns any video into real-time intelligence.
+            Turn live video into real-time data.
           </RevealText>
         </h1>
 

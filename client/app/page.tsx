@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <InputSourcesStrip />
+      {/* <InputSourcesStrip /> */}
       <WhatToruSees />
       <BusinessOutcomes />
       {/* <Industries /> */}
