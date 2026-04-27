@@ -52,7 +52,7 @@ export function Industries() {
         <SectionEyebrow>Industries</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Built for every space.
+            The same AI. Every space.
           </RevealText>
         </SectionTitle>
         <SectionLead>

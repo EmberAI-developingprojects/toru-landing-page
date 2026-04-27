@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Toru — Any camera. Real-time intelligence.",
+    default: "Toru — Computer vision for live video. Any source.",
     template: "%s · Toru",
   },
   description:
-    "Toru turns any IP camera into a live analytics sensor — dwell time, occupancy, queue length, and more. No new hardware, no rip-and-replace.",
+    "Toru is a computer vision platform. We process live video — from cameras, drones, or any feed — and extract operational data in real time.",
 };
 
 export default function RootLayout({

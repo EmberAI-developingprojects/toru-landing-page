@@ -15,7 +15,7 @@ const steps = [
   {
     number: "01",
     name: "Connect",
-    body: "Any IP camera on your local network connects instantly. No hardware swaps, no proprietary cameras, no NVR required.",
+    body: "Any video source connects instantly — IP cameras, drones, NVRs, or recorded footage. No hardware swaps, no proprietary cameras.",
   },
   {
     number: "02",

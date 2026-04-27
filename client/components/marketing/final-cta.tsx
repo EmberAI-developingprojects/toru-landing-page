@@ -15,12 +15,12 @@ export function FinalCTA() {
           </RevealOnScroll>
           <h2 className="max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
             <RevealText as="span" split="word">
-              Your cameras are already watching. Make them understand.
+              You already have the video. We&apos;re the AI that reads it.
             </RevealText>
           </h2>
           <RevealOnScroll delay={0.2}>
             <p className="max-w-2xl text-pretty text-lg leading-[1.7] text-white/80">
-              Connect one feed. We&apos;ll show you what it sees.
+              Bring one feed — camera, drone, anything. We&apos;ll show you what our AI extracts.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.3}>

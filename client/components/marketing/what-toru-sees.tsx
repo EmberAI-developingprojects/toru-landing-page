@@ -88,11 +88,11 @@ export function WhatToruSees() {
         <SectionEyebrow>Capabilities</SectionEyebrow>
         <SectionTitle>
           <RevealText as="span" split="word">
-            Make every camera count.
+            Real-time computer vision.
           </RevealText>
         </SectionTitle>
         <SectionLead>
-          Live metrics from your existing IP cameras. Setup in minutes. Insight in real time.
+          AI that reads every frame. Plug in any video source. Live metrics in real time.
         </SectionLead>
       </div>
 

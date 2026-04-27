@@ -1,4 +1,5 @@
 import { Hero } from "@/components/marketing/hero";
+import { InputSourcesStrip } from "@/components/sections/input-sources-strip";
 import { WhatToruSees } from "@/components/marketing/what-toru-sees";
 import { BusinessOutcomes } from "@/components/sections/business-outcomes";
 import { Industries } from "@/components/marketing/industries";
@@ -9,6 +10,7 @@ export default function Page() {
   return (
     <>
       <Hero />
+      <InputSourcesStrip />
       <WhatToruSees />
       <BusinessOutcomes />
       {/* <Industries /> */}

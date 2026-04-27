@@ -25,21 +25,22 @@ export function Hero() {
         <RevealOnScroll>
           <span className="inline-flex items-center gap-2 rounded-full border border-pulse/40 bg-pulse/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.22em] text-pulse backdrop-blur">
             <span className="size-1.5 rounded-full bg-pulse shadow-[0_0_10px_var(--color-pulse)]" />
-            Real-time video intelligence
+            Computer vision · object detection
           </span>
         </RevealOnScroll>
 
         <h1 className="mt-8 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">
           <RevealText as="span" split="word">
-            Turn any camera into an AI analyst.
+            AI that turns any video into real-time intelligence.
           </RevealText>
         </h1>
 
         <RevealOnScroll delay={0.2} className="mt-7 max-w-2xl">
           <p className="text-pretty text-lg leading-[1.7] text-white/80 md:text-xl">
-            Toru connects to your existing IP cameras and delivers live
-            operational intelligence — people counting, dwell time, queue
-            management, and more. No new hardware. No rip-and-replace.
+            Toru is a computer vision platform. We process live video from
+            cameras, drones, or any feed — and turn it into operational data in
+            real time. We&apos;re not a camera vendor; we&apos;re the AI behind
+            it.
           </p>
         </RevealOnScroll>
 

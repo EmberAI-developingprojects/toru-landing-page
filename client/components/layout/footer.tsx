@@ -41,7 +41,7 @@ export function Footer() {
             <Logo size="md" />
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-white/75">
-            Real-time intelligence from the cameras you already have.
+            Computer vision for any video feed. Any source.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ export default function Page() {
       <PageHero
         eyebrow="Solutions"
         title="One platform. Built for every space."
-        subtitle="Whether you run a single café or a network of warehouses, Toru delivers the same real-time intelligence — tailored to your industry."
+        subtitle="Whether you run a single café or a network of warehouses, Toru's computer vision turns your video into the metrics that matter — same AI, every industry."
         ctaLabel="Find your solution"
         ctaHref="#categories"
         background="dots"
