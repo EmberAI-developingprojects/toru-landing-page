@@ -24,11 +24,11 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative w-full px-6 py-28 md:px-10 md:py-36",
+        "relative w-full py-28 md:py-36",
         background === "dots" ? "bg-dot-grid" : "bg-grid-lines",
       )}
     >
-      <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-8 text-left">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-8 px-6 text-left md:px-10">
         <RevealOnScroll>
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent-soft px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
             <span className="size-1.5 rounded-full bg-accent" />

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Talk to the Toru team about real-time video intelligence.",
 };
 
-const EMAIL = "info@toru.mn";
+const EMAIL = "info@toru.world";
 
 export default function Page() {
   return (

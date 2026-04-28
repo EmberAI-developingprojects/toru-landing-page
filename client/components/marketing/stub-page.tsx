@@ -38,10 +38,10 @@ export function StubPage({ eyebrow, title, description }: StubPageProps) {
           className="flex flex-wrap items-center gap-3"
         >
           <a
-            href="mailto:info@toru.mn"
+            href="mailto:info@toru.world"
             className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-base font-medium tracking-tight text-canvas transition-colors hover:bg-accent-hover"
           >
-            info@toru.mn <ArrowRight size={16} />
+            info@toru.world <ArrowRight size={16} />
           </a>
           <Link
             href="/"
